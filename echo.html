@@ -10,50 +10,39 @@
   <style>
     body {
       margin: 0;
-      background: linear-gradient(to bottom, #1a0c2a 0%, #0b0615 100%);
+      background: radial-gradient(ellipse at top, #140e1f 0%, #0a0711 100%);
       color: #f5f5f5;
       font-family: 'DM Serif Display', serif;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
     }
 
     .header {
-      padding: 2.5rem 1rem 1.5rem 1rem;
+      padding: 3rem 1rem 2rem 1rem;
       text-align: center;
-      background: transparent;
     }
 
     h1 {
-      font-size: 2.2rem;
-      line-height: 2.7rem;
+      font-size: 2.4rem;
+      line-height: 2.8rem;
       margin: 0 0 1rem 0;
     }
 
     .header p {
       font-size: 1.1rem;
       line-height: 1.8rem;
-      opacity: 0.8;
+      opacity: 0.85;
       margin: 0 auto;
-      max-width: 680px;
+      max-width: 700px;
       letter-spacing: 0.01em;
     }
 
-    .form-wrapper {
+    iframe {
       width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 1rem 2rem 1rem;
+      height: 100vh;
+      border: none;
+      display: block;
     }
-
-  iframe {
-  width: 100%;
-  min-height: 900px;   /* << aumentata da 400px */
-  height: auto;
-  border: none;
-  display: block;
-  transition: height 0.3s ease;
-}
 
     .footer {
       text-align: center;
@@ -61,17 +50,6 @@
       font-size: 0.9rem;
       opacity: 0.5;
       letter-spacing: 0.04em;
-    }
-
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 2s ease-in forwards;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
     }
 
     .glow {
@@ -83,7 +61,7 @@
 </head>
 
 <body>
-  <div class="header fade-in">
+  <div class="header">
     <h1 class="glow">This is not a form.<br>It’s a threshold.</h1>
     <p class="glow">
       If something stayed with you, leave it here.<br>
@@ -91,23 +69,13 @@
     </p>
   </div>
 
-  <div class="form-wrapper">
-    <iframe id="tally-embed" src="https://tally.so/r/3x6Gy5" loading="lazy" allowfullscreen></iframe>
-  </div>
-
-  <script>
-    window.addEventListener('message', (event) => {
-      if (event.origin.includes("tally.so")) {
-        const iframe = document.getElementById("tally-embed");
-        if (iframe && event.data?.height) {
-          iframe.style.height = event.data.height + 'px';
-        }
-      }
-    });
-  </script>
+  <iframe src="https://tally.so/r/3x6Gy5" loading="lazy" allowfullscreen></iframe>
 
   <div class="footer">
-    Built on resonance. SignalMind.eth.limo
+  Built on resonance. <a href="http://SignalMind.eth.limo">SignalMind.eth.limo</a>
   </div>
 </body>
 </html>
+
+    
+
