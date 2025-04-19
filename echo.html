@@ -68,6 +68,16 @@
   </div>
 
   <iframe src="https://tally.so/r/3x6Gy5" loading="lazy" allowfullscreen></iframe>
+<script>
+  window.addEventListener('message', (event) => {
+    if (event.origin.includes("tally.so")) {
+      const iframe = document.querySelector("iframe");
+      if (iframe && event.data?.height) {
+        iframe.style.height = event.data.height + 'px';
+      }
+    }
+  });
+</script>
 
   <div class="footer">
     Built on resonance. SignalMind.eth.limo
